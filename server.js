@@ -31,29 +31,32 @@ const requestOptions = {
 getCoin = async (req,res) =>{
   const coin_data = []
  await axios.get("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",requestOptions).then(res =>{
+  
     for(var i = 0 ; i < res.data.data.length;i++){
       switch(res.data.data[i].id){
         case 1:
-         coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1h":res.data.data[i].quote.USD.percent_change_1h});
+         coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24h":res.data.data[i].quote.USD.percent_change_24h});
           break;
         case 52:
-          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1hr":res.data.data[i].quote.USD.percent_change_1h})
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
           break;
         case 74:
-          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1hr":res.data.data[i].quote.USD.percent_change_1h})
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
           break;
         case 825:
-          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1hr":res.data.data[i].quote.USD.percent_change_1h})
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
           break;
         case 1027:
-          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1hr":res.data.data[i].quote.USD.percent_change_1h})
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
           break;
         case 2010:
-          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1hr":res.data.data[i].quote.USD.percent_change_1h})
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
           break;
         case 5994:
-          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_1hr":res.data.data[i].quote.USD.percent_change_1h})
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
           break;
+        case 1839:
+          coin_data.push({"name":res.data.data[i].name,"symbol":res.data.data[i].symbol,"price":res.data.data[i].quote.USD.price,"percent_change_24hr":res.data.data[i].quote.USD.percent_change_24h})
         default:
           break;
       }
