@@ -35,7 +35,7 @@ getCoin = async (req,res) =>{
       method: "GET",
       params: { id: "1,2,52,74,825,1027,2010,5994,1839" },
       headers: {
-        "X-CMC_PRO_API_KEY": "d404905a-22a4-4fc5-9803-234a425c50f4",
+        "X-CMC_PRO_API_KEY": process.env.API_KEY,
       },
     }).then(res => res).then(data => console.log(Object.keys(data).length) )
  await axios.get("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",requestOptions).then(res =>{
